@@ -321,7 +321,7 @@ const DAY_SEC=24, START=new Date(2026,9,5), BANK_LIMIT=0;
 const LEVELS=[
  {name:'Arranque',days:45,goals:[{k:'signed',v:3,rel:1,l:'Firma 3 operaciones'},{k:'kwp',v:15,rel:1,l:'Instala 15 kWp'}]},
  {name:'Primeros cobros',days:60,goals:[{k:'closed',v:5,rel:1,l:'Cobra 5 obras'},{k:'sales',v:60000,rel:1,l:'Firma 60.000 €'}]},
- {name:'Montar equipo',days:60,goals:[{k:'nCom',v:3,l:'Ten 3 comerciales'},{k:'nCapt',v:3,l:'Ten 3 captadores'},{k:'sales',v:120000,rel:1,l:'Firma 120.000 €'}]},
+ {name:'Montar equipo',days:60,goals:[{k:'nCom',v:2,l:'Ten 2 comerciales'},{k:'nCapt',v:2,l:'Ten 2 captadores'},{k:'sales',v:120000,rel:1,l:'Firma 120.000 €'}]},
  {name:'Aerotermia',days:75,goals:[{k:'aero',v:5,rel:1,l:'Instala 5 bombas de calor'},{k:'closed',v:8,rel:1,l:'Cobra 8 obras'}]},
  {name:'Empresas',days:75,goals:[{k:'emp',v:2,rel:1,l:'Firma 2 empresas'},{k:'kwp',v:150,rel:1,l:'Instala 150 kWp'}]},
  {name:'Comunidades',days:90,goals:[{k:'com',v:2,rel:1,l:'Firma 2 comunidades'},{k:'sales',v:300000,rel:1,l:'Firma 300.000 €'}]},
@@ -420,10 +420,10 @@ function newGame(){
   [['Alcobendas',1],['Las Rozas',3],['Getafe',1],['Tres Cantos',1],['Pozuelo',4]].forEach(([n,k])=>{const t=towns.find(x=>x.name===n);const s=t.slots[k%t.slots.length];s.inst={mods:s.type==='casa'?12:30,aero:n==='Las Rozas'||n==='Pozuelo'?1:0,old:true};});
   S={day:0,lastDay:0,speed:0,started:false,over:false,cash:100000,
     jobs:[],vans:[],trucks:[],log:[],sel:null,tab:'obras',
-    capt:[{id:'p'+uid++,name:'Sandra',skill:3,salary:COST.capt,town:towns.find(t=>t.name==='Boadilla').i,leads:0,ops:0},{id:'p'+uid++,name:'Abraham',skill:3,salary:COST.capt,town:towns.find(t=>t.name==='Pozuelo').i,leads:0,ops:0}],
-    com:[{id:'p'+uid++,name:'Nando García',skill:4,rank:'sr',salary:COST.sr,job:null,sales:0,visits:0,ops:0,boss:null,me:true},{id:'p'+uid++,name:'Robert',skill:3,rank:'jr',salary:COST.jr,job:null,sales:0,visits:0,ops:0,boss:null}],
+    capt:[{id:'p'+uid++,name:'Abraham',skill:3,salary:COST.capt,town:towns.find(t=>t.name==='Pozuelo').i,leads:0,ops:0}],
+    com:[{id:'p'+uid++,name:'Nando García',skill:4,rank:'sr',salary:COST.sr,job:null,sales:0,visits:0,ops:0,boss:null,me:true}],
     fv:[{id:'f1',name:'Equipo FV 1',job:null}], ae:[],
-    cand:{capt:[candidate('capt'),candidate('capt'),candidate('capt')],com:[candidate('com'),candidate('com'),candidate('com')]},
+    cand:{capt:[{id:'p'+uid++,name:'Sandra',skill:3,salary:COST.capt,town:towns.find(t=>t.name==='Boadilla').i,leads:0,ops:0,fixed:true},candidate('capt'),candidate('capt')],com:[{id:'p'+uid++,name:'Robert',skill:3,rank:'jr',salary:COST.jr,job:null,sales:0,visits:0,ops:0,boss:null,fixed:true},candidate('com'),candidate('com')]},
     office:{dirCom:false,dirOps:false,legal:'ext',admin:'ext',autoMargin:0.30},
     mkt:{seo:true,google:false,meta:false,buzon:false}, feriaReady:0,
     nave:false, stock:emptyStock(), orders:[],
@@ -680,7 +680,7 @@ function onNewDay(){
   const daily=monthly()/30;S.cash-=daily;S.costsMonth+=daily;
   if(d%30===0){log('Gastos fijos del mes: '+fmt(S.costsMonth)+'.');S.costsMonth=0;}
   // candidatos y eventos
-  if(d>=S.nextCand){S.nextCand=d+15;S.cand.capt=[candidate('capt'),candidate('capt'),candidate('capt')];S.cand.com=[candidate('com'),candidate('com'),candidate('com')];}
+  if(d>=S.nextCand){S.nextCand=d+15;S.cand.capt=S.cand.capt.filter(c=>c.fixed).concat([candidate('capt'),candidate('capt'),candidate('capt')]).slice(0,3);S.cand.com=S.cand.com.filter(c=>c.fixed).concat([candidate('com'),candidate('com'),candidate('com')]).slice(0,3);}
   if(d>=S.nextEvent){const pool=EVENTS.filter(e=>!e.ok||e.ok());let r=Math.random()*pool.reduce((a,e)=>a+e.w,0),e=pool[0];for(const x of pool){r-=x.w;if(r<=0){e=x;break;}}
     const[t,m,c]=e.run();toast(t,m,c);log(t+'. '+m);S.nextEvent=d+randi(8,14)-Math.floor(D_()/2);}
   if(S.cash<20000&&!S.warnedNeg){S.warnedNeg=true;toast('Caja casi a cero','Si baja de 0 € pierdes la partida. Frena gastos o cobra obras.','bad');}
