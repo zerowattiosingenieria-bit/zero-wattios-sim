@@ -423,20 +423,20 @@ const DAY_SEC=24, START=new Date(2026,9,5), BANK_LIMIT=0;
 // Objetivos por nivel. "rel": cuenta desde que empieza el nivel; si no, total de la partida o estado actual.
 const LEVELS=[
  {name:'Arranque',days:45,goals:[{k:'signed',v:3,rel:1,l:'Firma 3 operaciones'},{k:'kwp',v:15,rel:1,l:'Instala 15 kWp'}]},
- {name:'Primeros cobros',days:60,goals:[{k:'closed',v:5,rel:1,l:'Cobra 5 obras'},{k:'sales',v:60000,rel:1,l:'Firma 60.000 €'}]},
- {name:'Montar equipo',days:60,goals:[{k:'nCom',v:2,l:'Ten 2 comerciales'},{k:'nCapt',v:2,l:'Ten 2 captadores'},{k:'sales',v:120000,rel:1,l:'Firma 120.000 €'}]},
- {name:'Aerotermia',days:75,goals:[{k:'aero',v:5,rel:1,l:'Instala 5 bombas de calor'},{k:'closed',v:8,rel:1,l:'Cobra 8 obras'}]},
- {name:'Empresas y comunidades',days:90,goals:[{k:'emp',v:2,rel:1,l:'Firma 2 empresas'},{k:'com',v:2,rel:1,l:'Firma 2 comunidades'},{k:'kwp',v:120,rel:1,l:'Instala 120 kWp'}]},
- {name:'Estructura en Madrid',days:90,goals:[{k:'dir',v:1,l:'Contrata una dirección'},{k:'teams',v:3,l:'Ten 3 equipos propios'},{k:'sales',v:300000,rel:1,l:'Firma 300.000 €'}]},
- {name:'Primera delegación',days:90,goals:[{k:'branches',v:2,l:'Abre una segunda delegación'},{k:'sales',v:400000,rel:1,l:'Firma 400.000 €'}]},
- {name:'Dos ciudades',days:120,goals:[{k:'bclosed',n:5,v:2,l:'2 delegaciones con 5 obras cobradas'},{k:'kwp',v:300,rel:1,l:'Instala 300 kWp'}]},
- {name:'Costa mediterránea',days:120,goals:[{k:'branches',v:4,l:'Ten 4 delegaciones'},{k:'sales',v:1000000,rel:1,l:'Firma 1 M€'}]},
- {name:'El norte',days:150,goals:[{k:'branches',v:6,l:'Ten 6 delegaciones'},{k:'kwp',v:1000,l:'1 MW instalado en total'}]},
- {name:'Andalucía y Baleares',days:150,goals:[{k:'branches',v:8,l:'Ten 8 delegaciones'},{k:'aero',v:60,l:'60 bombas de calor en total'},{k:'dir',v:6,l:'6 direcciones contratadas'}]},
- {name:'Gran empresa',days:180,goals:[{k:'sales',v:3000000,l:'3 M€ facturados en total'},{k:'teams',v:12,l:'12 equipos propios'},{k:'cash',v:250000,l:'Caja de 250.000 €'}]},
- {name:'Líder nacional',days:180,goals:[{k:'branches',v:10,l:'Ten 10 delegaciones'},{k:'bclosed',n:20,v:6,l:'6 delegaciones con 20 obras cobradas'},{k:'kwp',v:3000,l:'3 MW instalados en total'}]},
- {name:'Salto a Portugal',days:180,goals:[{k:'pt',v:1,l:'Abre la delegación de Lisboa'},{k:'city',city:'lis',v:10,l:'Cobra 10 obras en Lisboa'}]},
- {name:'Líder ibérico',days:240,goals:[{k:'branches',v:14,l:'Delegación en las 14 ciudades'},{k:'sales',v:10000000,l:'10 M€ facturados en total'},{k:'cash',v:500000,l:'Caja de 500.000 €'}]}
+ {name:'Primeros cobros',days:70,goals:[{k:'closed',v:4,rel:1,l:'Cobra 4 obras'},{k:'sales',v:60000,rel:1,l:'Firma 60.000 €'}]},
+ {name:'Montar equipo',days:75,goals:[{k:'nCom',v:3,l:'Ten 3 comerciales'},{k:'nCapt',v:2,l:'Ten 2 captadores'},{k:'sales',v:400000,rel:1,l:'Firma 400.000 €'}]},
+ {name:'Aerotermia',days:90,goals:[{k:'aero',v:12,rel:1,l:'Instala 12 bombas de calor'},{k:'closed',v:18,rel:1,l:'Cobra 18 obras'}]},
+ {name:'Empresas y comunidades',days:100,goals:[{k:'emp',v:2,rel:1,l:'Firma 2 empresas'},{k:'com',v:4,rel:1,l:'Firma 4 comunidades'},{k:'kwp',v:400,rel:1,l:'Instala 400 kWp'}]},
+ {name:'Estructura en Madrid',days:110,goals:[{k:'dir',v:2,l:'Dirección comercial y de operaciones'},{k:'teams',v:4,l:'Ten 4 equipos propios'},{k:'sales',v:1200000,rel:1,l:'Firma 1,2 M€'}]},
+ {name:'Primera delegación',days:120,goals:[{k:'branches',v:2,l:'Abre una segunda delegación'},{k:'bclosed',n:10,v:2,l:'2 delegaciones con 10 obras cobradas'},{k:'sales',v:1500000,rel:1,l:'Firma 1,5 M€'}]},
+ {name:'Tres ciudades',days:130,goals:[{k:'branches',v:3,l:'Ten 3 delegaciones'},{k:'kwp',v:1500,rel:1,l:'Instala 1,5 MW'},{k:'cashGain',v:1000000,l:'Gana 1 M€ de caja'}]},
+ {name:'Costa mediterránea',days:140,goals:[{k:'branches',v:5,l:'Ten 5 delegaciones'},{k:'sales',v:4000000,rel:1,l:'Firma 4 M€'}]},
+ {name:'El norte',days:150,goals:[{k:'branches',v:7,l:'Ten 7 delegaciones'},{k:'kwp',v:3000,rel:1,l:'Instala 3 MW'},{k:'bclosed',n:30,v:4,l:'4 delegaciones con 30 obras cobradas'}]},
+ {name:'Andalucía y Baleares',days:160,goals:[{k:'branches',v:9,l:'Ten 9 delegaciones'},{k:'aero',v:150,rel:1,l:'Instala 150 bombas de calor'},{k:'dir',v:12,l:'12 direcciones contratadas'}]},
+ {name:'Gran empresa',days:170,goals:[{k:'sales',v:15000000,rel:1,l:'Firma 15 M€'},{k:'teams',v:20,l:'20 equipos propios'},{k:'cashGain',v:3000000,l:'Gana 3 M€ de caja'}]},
+ {name:'Líder nacional',days:180,goals:[{k:'branches',v:11,l:'Ten 11 delegaciones'},{k:'bclosed',n:80,v:8,l:'8 delegaciones con 80 obras cobradas'},{k:'kwp',v:7000,rel:1,l:'Instala 7 MW'}]},
+ {name:'Salto a Portugal',days:180,goals:[{k:'pt',v:1,l:'Abre la delegación de Lisboa'},{k:'city',city:'lis',v:40,l:'Cobra 40 obras en Lisboa'},{k:'sales',v:25000000,rel:1,l:'Firma 25 M€'}]},
+ {name:'Líder ibérico',days:220,goals:[{k:'branches',v:14,l:'Delegación en las 14 ciudades'},{k:'city',city:'opo',v:30,l:'Cobra 30 obras en Oporto'},{k:'sales',v:35000000,rel:1,l:'Firma 35 M€'},{k:'cashGain',v:8000000,l:'Gana 8 M€ de caja'}]}
 ];
 const DIFF_L=['Muy fácil','Fácil','Fácil','Fácil','Normal','Normal','Normal','Difícil','Difícil','Difícil','Muy difícil','Muy difícil','Experto','Experto','Leyenda'];
 const D_=()=>Math.round((Math.min(S.level,LEVELS.length)-1)*9/14); // 0..9
@@ -615,10 +615,11 @@ function newGame(){
   const d=makeLead('ini','Alcobendas','empresa');if(d){d.t=6;}
   const e=makeLead('ini','Majadahonda','comunidad');if(e){e.t=8;}
   S.sel=b?b.id:null;
-  S.lvBase=JSON.parse(JSON.stringify(S.stats));
+  S.lvBase=JSON.parse(JSON.stringify(S.stats));S.lvCash=S.cash;
   log('Empieza la partida en Madrid. Nivel 1: '+LEVELS[0].name+'.');
   renderAll();
 }
+let _bic={t:0,m:new Map()};function branchInfoC(b){const n=performance.now();if(n-_bic.t>300){_bic.t=n;_bic.m=new Map();}if(!_bic.m.has(b))_bic.m.set(b,branchInfo(b));return _bic.m.get(b);}
 function cityState(c){return S.branches.some(x=>x.id===c.id)?'own':c.unlock<=S.level?'open':'lock';}
 function branchInfo(b){return inBranch(b,()=>({act:S.jobs.filter(j=>['material','obra','legal','cobro'].includes(j.stage)).length,com:S.jobs.filter(j=>['lead','visita','propuesta','enviada','junta'].includes(j.stage)).length,pend:S.jobs.filter(needsAct).length,staff:S.com.length+' com · '+S.capt.length+' capt · '+(S.fv.length+S.ae.length)+' equipos',nCom:S.com.length,nCapt:S.capt.length,nTeam:S.fv.length+S.ae.length,dc:S.office.dirCom,dops:S.office.dirOps,nave:S.nave,cost:monthly(),dir:(S.office.dirCom?1:0)+(S.office.dirOps?1:0)}));}
 function switchBranch(id){const b=S.branches.find(x=>x.id===id);if(!b)return;saveB();loadB(b);S.active=b;S.sel=null;S.view='local';S.lastAct=99;fx.length=0;cam.init=false;fitMap();if(S.tab==='red')S.tab='obras';renderAll();}
@@ -633,15 +634,41 @@ function openNew(id){
 function resolveAll(b){inBranch(b,()=>S.jobs.filter(needsAct).forEach(q=>quick(q,'auto')));}
 
 /* ================= leads ================= */
+function growSlot(type,pref){
+  // nueva urbanización, con tope de +60 % de edificios por mapa
+  if(!allSlots.capT){const c={};allSlots.forEach(o=>c[o.type]=(c[o.type]||0)+1);allSlots.capT={};for(const k of ['casa','bloque','nave'])allSlots.capT[k]=Math.max(Math.round((c[k]||0)*1.6),(c[k]||0)+8);}
+  if(allSlots.filter(o=>o.type===type).length>=allSlots.capT[type])return null;
+  for(let tries=0;tries<80;tries++){
+    const t=pref&&tries<50?pref:pick(T_TOWNS.filter(x=>x.type!=='base'));
+    const base0=(t.type==='city'?3.4:t.type==='base'?4:1.95)*(type==='casa'?1:type==='nave'?1.75:1.4);
+    const r=base0+0.5+Math.random()*(1.4+t.slots.length*0.1),a=Math.random()*Math.PI*2;
+    const x=t.x+Math.cos(a)*r,y=t.y+Math.sin(a)*r;
+    if(allSlots.some(o=>Math.hypot(o.x-x,o.y-y)<(type==='nave'||o.type==='nave'?1.6:1.15)))continue;
+    if(towns.some(o=>o!==t&&Math.hypot(o.x-x,o.y-y)<(o.type==='base'?5:o.type==='dist'?2.6:o.type==='city'?3.2:2)))continue;
+    if(t.blocks&&t.blocks.some(b=>Math.hypot(b.x+0.3-x,b.y+0.3-y)<1.1))continue;
+    const sl={t:t.i,type,x,y,job:null,inst:null,work:null,id:allSlots.length};
+    t.slots.push(sl);allSlots.push(sl);
+    for(let i=trees.length-1;i>=0;i--)if(Math.hypot(trees[i].x-x,trees[i].y-y)<1.1)trees.splice(i,1);
+    Bd.minX=Math.min(Bd.minX,x-3);Bd.maxX=Math.max(Bd.maxX,x+3);Bd.minY=Math.min(Bd.minY,y-3);Bd.maxY=Math.max(Bd.maxY,y+3);
+    return t;
+  }
+  return null;
+}
 function makeLead(src,townName,forceType,quality){
   const mix=src==='capt'?{vivienda:.7,comunidad:.25,empresa:.05}:src==='feria'?{empresa:.7,comunidad:.3}:src==='refer'?{vivienda:.7,comunidad:.15,empresa:.15}:CHANNELS[src]?CHANNELS[src].mix:{vivienda:.6,empresa:.2,comunidad:.2};
   const type=forceType||wpick(mix);
-  let cands=T_TOWNS.filter(t=>t.slots.some(s=>!s.job&&!s.inst&&s.type===slotType(type)));
-  if(townName) cands=cands.filter(t=>t.name===townName||t.i===townName);
+  const st=slotType(type);
+  const isFree=s=>!s.job&&!s.inst&&s.type===st;
+  const isOld=s=>!s.job&&s.inst&&s.type===st&&S.day-(s.inst.day==null?-999:s.inst.day)>150;
+  let pred=isFree;
+  const byTown=L=>townName!=null?L.filter(t=>t.name===townName||t.i===townName):L;
+  let cands=byTown(T_TOWNS.filter(t=>t.slots.some(pred)));
+  if(!cands.length){const pref=townName!=null?T_TOWNS.find(t=>t.name===townName||t.i===townName):null;const g=growSlot(st,pref);if(g)cands=[g];}
+  if(!cands.length){pred=isOld;const all=T_TOWNS.filter(t=>t.slots.some(pred));const f=byTown(all);cands=f.length?f:all;}
   if(!cands.length) return null;
   const w=cands.map(t=>(t.i===S.ev.promoTown&&S.day<S.ev.promoUntil&&(src==='capt'||src==='buzon')?4:1)*(t.type==='city'?1.3:1));
   let r=Math.random()*w.reduce((x,y)=>x+y,0),t=cands[0];for(let i=0;i<cands.length;i++){r-=w[i];if(r<=0){t=cands[i];break;}}
-  const slot=pick(t.slots.filter(s=>!s.job&&!s.inst&&s.type===slotType(type)));
+  const slot=pick(t.slots.filter(pred));
   const q=clamp(0.05-0.025*D_()+(quality!==undefined?quality:src==='refer'?0.86:src==='feria'?0.74:src==='ini'?0.7:CHANNELS[src]?CHANNELS[src].q:0.6)+rand(-0.1,0.1),0.2,0.95);
   const j={id:uid++,src,town:t.i,slot:slot.id,type,stage:'lead',t:Math.max(8,(type==='comunidad'?20:15)-0.6*D_()),opt:0,margin:S.office.autoMargin,price:0,paid:0,costs:0,born:S.day,interest:q,parts:{}};
   if(type==='empresa'){j.name=isPT()?pick(EMP_PT)+' '+pick(EMP2_PT):pick(EMPRESAS)+' '+pick(EMP2);j.consumo=randi(28,160)*1000;j.roof=randi(25,120)*10;}
@@ -722,13 +749,13 @@ function commissions(j,d){
 }
 function sign(j,silent){
   const o=j.opts[j.opt]; if(!j.price)j.price=price(o,j.margin,j.disc);
-  S.stats.sales+=j.price;S.bstats.sales+=j.price;S.bstats.signed++;j.paid=Math.round(j.price*0.3);S.cash+=j.paid;
+  S.stats.sales+=j.price;S.bstats.sales+=j.price;S.bstats.signed++;j.paid=Math.round(j.price*0.4);S.cash+=j.paid;
   const cm=commissions(j,j.disc);const tot=cm.reduce((a,x)=>a+x[1],0);S.cash-=tot;j.costs+=tot;j.comm=tot;S.stats.signed++;if(j.type==='empresa')S.stats.emp++;if(j.type==='comunidad')S.stats.com++;
   cm.forEach(x=>{if(x[2])x[2].ops=(x[2].ops||0)+1;});
   const c=comOf(j);if(c)c.sales+=j.price;
   j.parts={};if(o.kwp)j.parts.fv={st:'pend'};if(o.aero)j.parts.ae={st:'pend'};
   if(!silent)addFx(j,'Firmado '+fk(j.price),'#B4FA1E');
-  if(!silent){log('Firma '+j.name+': '+fmt(j.price)+'. Anticipo 30 %. Comisiones '+fmt(tot)+'.');toast('¡Firmado! '+j.name,fmt(j.price)+' · anticipo cobrado','ok');}
+  if(!silent){log('Firma '+j.name+': '+fmt(j.price)+'. Cobro del 40 % a la firma. Comisiones '+fmt(tot)+'.');toast('¡Firmado! '+j.name,fmt(j.price)+' · anticipo cobrado','ok');}
   supply(j);
 }
 function need(o){const n={mod:o.mod,inv:o.inv,bat:o.bat};if(o.aero)n['a'+AERO[o.am].kw]=o.aero;return n;}
@@ -823,14 +850,14 @@ function tickJobs(dd){
         for(const k in j.parts){const P_=j.parts[k];
           if(P_.st==='work'&&!rain){P_.t-=dd;if(P_.t<=0){P_.st='done';toast((k==='fv'?'Placas montadas':'Aerotermia instalada')+' · '+j.name,towns[j.town].name,'ok');renderAll();}}
           if(P_.st!=='done')all=false;}
-        if(all){const o=j.opts[j.opt];S.stats.kwp+=o.kwp;S.bstats.kwp+=o.kwp;S.stats.aero+=o.aero;const cons=o.kwp*COST.consumKwp;S.cash-=cons;j.costs+=cons;
-          slotOf(j).inst={mods:o.mod,aero:o.aero};slotOf(j).work=null;addFx(j,o.kwp?'+'+k1(o.kwp)+' kWp':'Aerotermia lista','#FFFFFF');
+        if(all){const o=j.opts[j.opt];const h2=Math.round(j.price*0.4);S.cash+=h2;j.paid+=h2;S.stats.kwp+=o.kwp;S.bstats.kwp+=o.kwp;S.stats.aero+=o.aero;const cons=o.kwp*COST.consumKwp;S.cash-=cons;j.costs+=cons;
+          {const sl=slotOf(j),pv=sl.inst||{};sl.inst={mods:Math.max(pv.mods||0,o.mod),aero:Math.max(pv.aero||0,o.aero),day:S.day};}slotOf(j).work=null;addFx(j,o.kwp?'+'+k1(o.kwp)+' kWp':'Aerotermia lista','#FFFFFF');
           j.stage='legal';j.t=Infinity;log('Obra terminada en '+towns[j.town].name+': '+(o.kwp?k1(o.kwp)+' kWp':'')+(o.aero?(o.kwp?' + ':'')+o.aero+' bomba(s) de calor':'')+'.');renderAll();}
         break;}
       case 'legal':
         if(j.t===Infinity){const cap=S.office.legal==='own'?6:99;if(legalLoad()<cap){j.t=legalTime();if(S.office.legal==='ext'){S.cash-=COST.legalExt;j.costs+=COST.legalExt;}}}
         else{j.t-=dd;if(j.t<=0){S.cash-=300;j.costs+=300;j.stage='cobro';j.t=S.office.admin==='own'?randi(1,3):randi(2,6);log('Legalizada: '+j.name+'.');renderAll();}} break;
-      case 'cobro': j.t-=dd;if(j.t<=0){const rest=j.price-j.paid;S.cash+=rest;j.paid=j.price;j.stage='cerrada';addFx(j,'+'+fk(rest),'#7CE08A');S.stats.closed++;S.bstats.closed++;S.stats.profit+=j.price-j.costs;log('Cobrado '+fmt(rest)+' de '+j.name+'. Margen de obra '+fmt(j.price-j.costs)+'.');toast('Cobrado · '+j.name,'+'+fmt(rest),'ok');
+      case 'cobro': j.t-=dd;if(j.t<=0){const rest=j.price-j.paid;S.cash+=rest;j.paid=j.price;j.stage='cerrada';slotOf(j).job=null;addFx(j,'+'+fk(rest),'#7CE08A');S.stats.closed++;S.bstats.closed++;S.stats.profit+=j.price-j.costs;log('Cobrado '+fmt(rest)+' de '+j.name+'. Margen de obra '+fmt(j.price-j.costs)+'.');toast('Cobrado · '+j.name,'+'+fmt(rest),'ok');
           if(Math.random()<0.25){const r=makeLead('refer');if(r)toast('Recomendación',j.name+' os recomienda a '+r.name+'.','lime');}renderAll();} break;
     }
   }
@@ -865,6 +892,7 @@ const EVENTS=[
 ];
 function branchDay(){
   const d=S.day;
+  const done=S.jobs.filter(j=>j.stage==='cerrada'||j.stage==='perdida');if(done.length>40){const keep=new Set(done.slice(-30));S.jobs=S.jobs.filter(j=>!(j.stage==='cerrada'||j.stage==='perdida')||keep.has(j));}
   // captación
   S.capt.forEach(c=>{const rate=0.2+0.09*c.skill+(c.town===S.ev.promoTown&&d<S.ev.promoUntil?0.25:0);if(Math.random()<rate){const j=makeLead('capt',c.town,null,0.4+0.08*c.skill);if(j){c.leads++;j.capt=c.name;j.captId=c.id;toast('Lead de '+c.name.split(' ')[0],j.name+' · '+towns[j.town].name,'lime');}}});
   for(const k in S.mkt)if(S.mkt[k]){const ch=CHANNELS[k];let r=ch.rate*1.3;while(r>0){if(Math.random()<Math.min(1,r)){const j=makeLead(k);if(j)toast('Lead de '+ch.name,j.name+' · '+towns[j.town].name,'lime');}r-=1;}}
@@ -876,7 +904,7 @@ function branchDay(){
   if(d>=S.nextEvent){const pool=EVENTS.filter(e=>!e.ok||e.ok());let r=Math.random()*pool.reduce((a,e)=>a+e.w,0),e=pool[0];for(const x of pool){r-=x.w;if(r<=0){e=x;break;}}
     const[t,m,c]=e.run();toast(t,m,c);log(t+'. '+m);S.nextEvent=d+randi(8,14)-Math.floor(D_()/2);}
 }
-function central(){return S.branches.length>1?COST.central*(S.branches.length-1):0;}
+function central(){const n=S.branches.length-1;return n>0?COST.central*n+300*n*n:0;}
 function globalDay(){
   S.hist.push({c:S.cash,k:S.stats.kwp,s:S.stats.sales});
   S.cash-=central()/30;
@@ -893,6 +921,7 @@ function goalVal(g){
     case 'dir':return sumB(()=>(S.office.dirCom?1:0)+(S.office.dirOps?1:0));
     case 'teams':return sumB(()=>S.fv.length+S.ae.length);
     case 'branches':return S.branches.length;
+    case 'cashGain':return S.cash-(S.lvCash||0);
     case 'pt':return S.branches.filter(b=>b.city.pt).length;
     case 'bclosed':return S.branches.filter(b=>b.bstats.closed>=g.n).length;
     case 'city':{const b=S.branches.find(x=>x.id===g.city);return b?b.bstats.closed:0;}
@@ -902,7 +931,7 @@ function goalVal(g){
 }
 function lvl(){return LEVELS[Math.min(S.level,LEVELS.length)-1];}
 function lvProgress(){if(S.level>LEVELS.length)return 1;const L=lvl();return L.goals.reduce((a,g)=>a+clamp(goalVal(g)/g.v,0,1),0)/L.goals.length;}
-function goalTxt(g,v){return g.k==='sales'||g.k==='cash'?fk(Math.max(0,v))+' / '+fk(g.v):g.k==='kwp'?k1(Math.max(0,v))+' / '+nf.format(g.v)+' kWp':nf.format(Math.max(0,v))+' / '+nf.format(g.v);}
+function goalTxt(g,v){return g.k==='sales'||g.k==='cash'||g.k==='cashGain'?fk(Math.max(0,v))+' / '+fk(g.v):g.k==='kwp'?k1(Math.max(0,v))+' / '+nf.format(g.v)+' kWp':nf.format(Math.max(0,v))+' / '+nf.format(g.v);}
 function checkLevel(){
   if(S.over||S.level>LEVELS.length)return;
   const L=lvl();if(!L.goals.every(g=>goalVal(g)>=g.v))return;
@@ -911,7 +940,7 @@ function checkLevel(){
   S.cash+=bonus;S.stars.push(st);
   log('Nivel '+S.level+' ('+L.name+') superado en '+Math.ceil(used)+' días · '+'★'.repeat(st)+'. Premio '+fmt(bonus)+'.');
   banner('Nivel '+S.level+' superado · '+'★'.repeat(st)+'☆'.repeat(3-st),'+'+fmt(bonus)+(S.level<LEVELS.length?' · Siguiente: '+LEVELS[S.level].name+' ('+DIFF_L[S.level]+')':' · ¡Has completado todos los niveles!'));
-  S.level++;S.lvStart=S.day;S.lvBase=JSON.parse(JSON.stringify(S.stats));
+  S.level++;S.lvStart=S.day;S.lvBase=JSON.parse(JSON.stringify(S.stats));S.lvCash=S.cash;
   const nu=CITIES.filter(c=>c.unlock===S.level);if(nu.length){const t='Nuevas ciudades disponibles: '+nu.map(c=>c.name).join(', ')+'.';log(t);setTimeout(()=>banner(nu.some(c=>c.pt)?'Portugal se abre':'Puedes expandirte',t+' Ábrelas desde el mapa de España.'),6800);}
   if(S.level>LEVELS.length)log('Has completado los 15 niveles. Puedes seguir jugando en modo libre.');
   else log('Empieza el nivel '+S.level+': '+LEVELS[S.level-1].name+'. La competencia aprieta: clientes más exigentes, material más caro y más imprevistos.');
@@ -1157,7 +1186,7 @@ function drawSpain(now){
   hits=[];const pulse=(now-t0)/1000;
   CITIES.forEach(c=>{const st=cityState(c),p=SP(c.lon,c.lat),b=S.branches.find(x=>x.id===c.id),sel=(S.selCity||S.active.id)===c.id,hov=hoverId==='c:'+c.id;
     let sub='';
-    if(st==='own'){const i=branchInfo(b);const r=c.id==='mad'?17:14;
+    if(st==='own'){const i=branchInfoC(b);const r=c.id==='mad'?17:14;
       if(i.pend){const k=(pulse%1.4)/1.4;ctx.strokeStyle=`rgba(150,210,10,${1-k})`;ctx.lineWidth=2.5;ctx.beginPath();ctx.arc(p[0],p[1],r+4+k*12,0,Math.PI*2);ctx.stroke();}
       ctx.fillStyle='#242422';ctx.beginPath();ctx.arc(p[0],p[1],r+3,0,Math.PI*2);ctx.fill();
       if(beeImg.complete)ctx.drawImage(beeImg,p[0]-r,p[1]-r,r*2,r*2);
@@ -1190,7 +1219,7 @@ function spark(v){v=v.slice(-90);if(v.length<2)return'';const mn=Math.min(0,...v
 function renderTop(){
   renderGoals();
   const pr=lvProgress(),L=lvl();
-  const inf=S.branches.map(branchInfo);const act=inf.reduce((a,i)=>a+i.act,0),pend=inf.reduce((a,i)=>a+i.pend,0),cost=inf.reduce((a,i)=>a+i.cost,0)+central();
+  const inf=S.branches.map(branchInfoC);const act=inf.reduce((a,i)=>a+i.act,0),pend=inf.reduce((a,i)=>a+i.pend,0),cost=inf.reduce((a,i)=>a+i.cost,0)+central();
   $('#kpis').innerHTML=
    `<div class="kpi goal"><div class="l">${S.level>LEVELS.length?'Modo libre':'Nivel '+S.level+' de '+LEVELS.length+' · '+L.name}</div><div class="v">${kw(S.stats.kwp)} <small>· ${fk(S.stats.sales)} · ${S.stars.reduce((a,b)=>a+b,0)} ★</small></div><div class="bar"><i style="width:${clamp(pr*100,0,100)}%"></i></div></div>
     <div class="kpi"><div class="l">Caja</div><div class="v ${S.cash<0?'neg':''}">${fk(S.cash)}</div>${spark(S.hist.map(x=>x.c).concat([S.cash]))}</div>
@@ -1373,7 +1402,7 @@ function renderTabs(){
         <div class="bstats"><div><b>${i.com}</b><small>Comercial</small>${meter(i.com/mxv,'#2F55B8')}</div><div><b>${i.act}</b><small>Obras</small>${meter(i.act/mxv,'#9BDB10')}</div><div><b>${b.bstats.closed}</b><small>Cobradas</small>${meter(b.bstats.closed/mxv,'#178A50')}</div><div class="${i.pend?'hot':''}"><b>${i.pend}</b><small>Tareas</small>${meter(i.pend/8,i.pend>5?'#C73636':'#C96A12')}</div></div>
         <div class="bteam"><span class="chip">${ic('person',13)} ${i.nCom} com</span><span class="chip">${ic('door',13)} ${i.nCapt} capt</span><span class="chip">${ic('team',13)} ${i.nTeam} equipos</span>${i.dc?'<span class="chip ok">Dir. comercial</span>':''}${i.dops?'<span class="chip ok">Dir. operaciones</span>':''}${i.nave?'<span class="chip">'+ic('box',13)+' Nave</span>':''}<span class="chip">${fk(b.bstats.sales)} facturado</span></div>
         <div class="btns">${b!==S.active?`<button class="btn sm pri" data-act="goto" data-b="${b.id}">Gestionar</button>`:''}${i.pend?`<button class="btn sm" data-act="qb" data-b="${b.id}">Resolver ${i.pend}</button>`:''}</div></div>`;}).join('');
-    h+=`<div class="note" style="font-size:12.5px">Estructura central: ${fmt(central())}/mes (${fmt(COST.central)} por cada delegación además de Madrid). Con direcciones comerciales y de operaciones, cada delegación funciona sola.</div>`;
+    h+=`<div class="note" style="font-size:12.5px">Estructura central: ${fmt(central())}/mes (crece más que proporcionalmente con cada delegación). Con direcciones comerciales y de operaciones, cada delegación funciona sola.</div>`;
     h+=`<div class="grp"><span>Expansión</span><span><button class="lnk" data-act="spain">${S.view==='spain'?'Volver a '+S.active.name:'Ver mapa de España'}</button></span></div><div class="xgrid">`+
       CITIES.filter(c=>cityState(c)!=='own').sort((a,b)=>a.unlock-b.unlock).map(c=>{const st=cityState(c);return st==='open'?`<div class="xc open"><span class="xi">${ic('plus',16)}</span><b>${c.name}</b><small>${c.pt?'Portugal · ':''}${fmt(c.cost)}</small><button class="btn sm pri" data-act="openb" data-c="${c.id}" ${S.cash<c.cost?'disabled':''}>Abrir</button></div>`:`<div class="xc lock"><span class="xi">${ic('lock',15)}</span><b>${c.name}</b><small>Nivel ${c.unlock}${c.pt?' · Portugal':''}</small></div>`;}).join('')+'</div>';
   }
@@ -1496,6 +1525,7 @@ $('#overlay').innerHTML=`<div class="card"><img class="bee" src="${BEE_SRC}" alt
   <ul><li><b>Cada delegación</b> tiene su propio mapa, comerciales, captadores, equipos, nave y oficina. Cambia de una a otra con el selector de arriba.</li>
   <li><b>Mapa de España:</b> ves todas tus delegaciones, sus tareas pendientes y las ciudades que puedes abrir.</li>
   <li><b>Direcciones comerciales y de operaciones</b> hacen que cada delegación funcione sola. Sin ellas, las tareas se acumulan.</li>
+  <li><b>Cobros por hitos:</b> 40 % al firmar, 40 % al terminar el montaje y 20 % tras legalizar. El material se paga al pedirlo: vigila la caja con las obras grandes.</li>
   <li><b>Estructura central:</b> cada delegación nueva suma gasto fijo. Si la caja baja de 0 €, pierdes.</li></ul>
   <button class="btn pri" data-act="start" style="width:100%;padding:12px">Empezar en Madrid</button></div>`;
 resize();fitMap();requestAnimationFrame(loop);
